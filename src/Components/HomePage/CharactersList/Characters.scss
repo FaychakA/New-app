@@ -1,0 +1,23 @@
+.characters {
+  display: flex;
+  justify-content: center;
+  background-color: dodgerblue;
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 50px;
+    width: 1200px;
+    list-style-type: none;
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    margin: 20px 30px;
+    width: 180px;
+    border: solid 3px black;
+    box-sizing: border-box;
+  }
+}
