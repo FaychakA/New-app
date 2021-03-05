@@ -11,7 +11,6 @@ const Characters = ({getCharacters, loading, loaded, charactersList, error}) => 
             getCharacters();
         }
     }, []);
-    console.log(charactersList, "characterList");
 
     return (
         <div className="characters">

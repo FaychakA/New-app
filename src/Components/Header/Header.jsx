@@ -23,7 +23,7 @@ const Header = () => {
                         exact
                         className="header__link"
                     >
-                        List of all Characters
+                        All Characters
                     </NavLink>
                 </li>
 
@@ -33,7 +33,7 @@ const Header = () => {
                         exact
                         className="header__link"
                     >
-                        List of all Locations
+                        All Locations
                     </NavLink>
                 </li>
 
@@ -43,7 +43,7 @@ const Header = () => {
                         exact
                         className="header__link"
                     >
-                        List of all Episodes
+                        All Episodes
                     </NavLink>
                 </li>
             </ul>

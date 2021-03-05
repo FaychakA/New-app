@@ -1,0 +1,16 @@
+.card {
+  background-color: white;
+
+  &__wrapper {
+    padding: 10px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: dodgerblue;
+  }
+
+  &__link:hover {
+    color: chocolate;
+  }
+}

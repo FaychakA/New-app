@@ -1,25 +1,28 @@
-import { START_LOAD_CHARACTER, LOADED_CHARACTER, ERROR_CHARACTER } from '../Helpers/actions';
+import { START_LOAD_LOCATIONS, LOADED_LOCATIONS, ERROR_LOCATIONS } from '../Helpers/actions';
 
 const initialState = {
     loading: false,
-    characterParams: null,
+    loaded: false,
+    locationsList: [],
     error: null,
 }
 
-export default function characterReducer(state = initialState, action) {
+export default function locationsReducer(state = initialState, action) {
     switch (action.type) {
-        case START_LOAD_CHARACTER:
+        case START_LOAD_LOCATIONS:
             return {
                 ...state,
                 loading: true,
+                loaded: false
             };
-        case LOADED_CHARACTER:
+        case LOADED_LOCATIONS:
             return {
                 ...state,
                 loading: false,
-                characterParams: {...action.payload}
+                loaded: true,
+                locationsList: [...state.locationsList, ...action.payload.results]
             };
-        case ERROR_CHARACTER:
+        case ERROR_LOCATIONS:
             return {
                 ...state,
                 loading: false,

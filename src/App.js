@@ -7,6 +7,7 @@ import Locations from "./Components/HomePage/LocationsList/Locations";
 import Episodes from "./Components/HomePage/EpisodesList/Episodes";
 import Footer from "./Components/Footer/Footer";
 import CharacterPage from "./Components/HomePage/CharacterPage/CharacterPage";
+import LocationPage from "./Components/HomePage/LocationPage/LocationPage";
 import './App.scss';
 
 function App() {
@@ -46,6 +47,12 @@ function App() {
                     path="/character/:characterId"
                     exact
                     component={CharacterPage}
+                    />
+
+                    <Route
+                        path="/location/:locationId"
+                        exact
+                        component={LocationPage}
                     />
                 </Switch>
             </main>

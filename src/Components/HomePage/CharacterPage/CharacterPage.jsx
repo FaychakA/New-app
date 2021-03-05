@@ -11,7 +11,6 @@ const CharacterPage = ({match, getCharacter, loading, characterParams, error}) =
             getCharacter(match.params.characterId);
         }
     }, []);
-    console.log(characterParams, "characterParams");
 
     if(loading || !characterParams){
         return null;
