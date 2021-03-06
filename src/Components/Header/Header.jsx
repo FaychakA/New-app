@@ -9,19 +9,10 @@ const Header = () => {
             <ul className="header__list">
                 <li className="header__item">
                     <NavLink
-                        to="/"
+                        to="/character"
                         exact
                         className="header__link"
-                    >
-                        Home Page
-                    </NavLink>
-                </li>
-
-                <li className="header__item">
-                    <NavLink
-                        to="/characters"
-                        exact
-                        className="header__link"
+                        activeClassName="header__link--active"
                     >
                         All Characters
                     </NavLink>
@@ -29,9 +20,10 @@ const Header = () => {
 
                 <li className="header__item">
                     <NavLink
-                        to="/locations"
+                        to="/location"
                         exact
                         className="header__link"
+                        activeClassName="header__link--active"
                     >
                         All Locations
                     </NavLink>
@@ -39,9 +31,10 @@ const Header = () => {
 
                 <li className="header__item">
                     <NavLink
-                        to="/episodes"
+                        to="/episode"
                         exact
                         className="header__link"
+                        activeClassName="header__link--active"
                     >
                         All Episodes
                     </NavLink>

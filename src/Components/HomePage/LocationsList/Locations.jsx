@@ -11,7 +11,6 @@ const Locations = ({getLocations, loading, loaded, locationsList, error}) => {
             getLocations();
         }
     }, []);
-    console.log(locationsList, "locationsList");
 
     return (
         <div className="locations">

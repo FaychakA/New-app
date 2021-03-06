@@ -11,7 +11,6 @@ const LocationPage = ({match, getLocation, loading, locationParams, error}) => {
             getLocation(match.params.locationId);
         }
     }, []);
-    console.log(locationParams, "locationParams");
 
     if(loading || !locationParams){
         return null;

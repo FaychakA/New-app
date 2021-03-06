@@ -31,27 +31,37 @@
     text-transform: uppercase;
     color: antiquewhite;
     transition: all .4s;
-  }
 
-  &__link:hover {
-    color: white;
-  }
+    &:hover {
+      color: black;
+    }
 
-  &__link:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    display: block;
-    width: 0;
-    height: 3px;
-    background-color: white;
-    transition: width .4s;
-  }
+    &--active {
+      color: greenyellow;
+    }
 
-  &__link:hover:after {
-    content: "";
-    width: 100%;
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      display: block;
+      width: 0;
+      height: 3px;
+      background-color: black;
+      transition: width .4s;
+    }
+
+    &:hover:after {
+      content: "";
+      width: 100%;
+    }
+
+    &--active:after {
+      content: "";
+      width: 100%;
+      background-color: greenyellow;
+    }
   }
 
 }
