@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {getCharacter} from '../../../Helpers/GetCharacter';
+import {getCharacter} from '../../Helpers/GetCharacter';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './CharacterPage.scss';

@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {getEpisode} from '../../../Helpers/GetEpisode';
+import {getEpisode} from '../../Helpers/GetEpisode';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './EpisodePage.scss';
@@ -11,7 +11,6 @@ const EpisodePage = ({match, getEpisode, loading, episodeParams, error}) => {
             getEpisode(match.params.episodeId);
         }
     }, []);
-    console.log(episodeParams, "episodeParams");
 
     if(loading || !episodeParams){
         return null;

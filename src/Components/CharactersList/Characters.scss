@@ -1,15 +1,18 @@
-.locations {
+.characters {
   display: flex;
   justify-content: center;
-  background-color: dodgerblue;
+  background-color: #1e90ff;
 
   &__list {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
     margin: 50px;
     width: 1200px;
     list-style-type: none;
+  }
+
+  &__scroll {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
   &__item {
@@ -17,7 +20,7 @@
     justify-content: center;
     margin: 20px 30px;
     width: 180px;
-    border: solid 3px black;
+    border: solid 3px #000;
     box-sizing: border-box;
   }
 }

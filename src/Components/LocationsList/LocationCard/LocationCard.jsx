@@ -9,7 +9,7 @@ const LocationCard = ({location}) => {
 
             <div className="card__wrapper">
                 Name: &nbsp;
-                <Link to={`location/${location.id}`} className="card__link">
+                <Link to={`/location/${location.id}`} className="card__link">
                     {location.name}
                 </Link>
 

@@ -26,18 +26,18 @@
     font-family: Mont, sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 14px;
     letter-spacing: .04em;
     text-transform: uppercase;
-    color: antiquewhite;
+    color: #fff;
     transition: all .4s;
 
     &:hover {
-      color: black;
+      color: #000;
     }
 
     &--active {
-      color: greenyellow;
+      color: #003366;
     }
 
     &:after {
@@ -48,7 +48,7 @@
       display: block;
       width: 0;
       height: 3px;
-      background-color: black;
+      background-color: #000;
       transition: width .4s;
     }
 
@@ -60,7 +60,7 @@
     &--active:after {
       content: "";
       width: 100%;
-      background-color: greenyellow;
+      background-color: #003366;
     }
   }
 

@@ -1,5 +1,5 @@
 .card {
-  background-color: white;
+  background-color: #fff;
 
   &__img {
     object-fit: contain;
@@ -12,10 +12,10 @@
 
   &__link {
     text-decoration: none;
-    color: dodgerblue;
+    color: #1e90ff;
   }
 
   &__link:hover {
-    color: chocolate;
+    color: #d2691e;
   }
 }

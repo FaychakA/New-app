@@ -10,7 +10,7 @@ const CharacterCard = ({character}) => {
 
             <div className="card__wrapper">
                 Name: &nbsp;
-                <Link to={`character/${character.id}`} className="card__link">
+                <Link to={`/character/${character.id}`} className="card__link">
                     {character.name}
                 </Link>
 

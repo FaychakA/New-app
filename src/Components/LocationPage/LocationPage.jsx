@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {getLocation} from '../../../Helpers/GetLocation';
+import {getLocation} from '../../Helpers/GetLocation';
 import {connect} from 'react-redux';
 import {Link} from 'react-router-dom';
 import './LocationPage.scss';

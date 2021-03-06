@@ -13,12 +13,12 @@
     font-size: 12px;
     letter-spacing: .04em;
     text-transform: uppercase;
-    color: antiquewhite;
+    color: #fff;
     transition: all .4s;
   }
 
   &__link:hover {
-    color: black;
+    color: #000;
   }
 
   &__text {

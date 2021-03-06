@@ -1,4 +1,4 @@
-.character {
+.episode {
 
   &__wrapper {
     display: flex;
@@ -21,14 +21,14 @@
 
   &__link {
     text-decoration: none;
-    color: dodgerblue;
+    color: #1e90ff;
   }
 
   &__link:hover {
-    color: darkred;
+    color: #8d0005;
   }
 
-  &__episode {
+  &__characters {
     display: flex;
 
     &--list {
