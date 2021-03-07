@@ -1,0 +1,44 @@
+.character {
+
+  &__wrapper {
+    display: flex;
+    margin: 50px;
+  }
+
+  &__img {
+    margin-right: 100px;
+    border-radius: 50px;
+  }
+
+  &__params {
+    display: flex;
+    flex-direction: column;
+
+    &--text {
+      margin-bottom: 10px;
+    }
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #1e90ff;
+  }
+
+  &__link:hover {
+    color: #8d0005;
+  }
+
+  &__episode {
+    display: flex;
+
+    &--list {
+      display: flex;
+      flex-wrap: wrap;
+      list-style-type: none;
+    }
+
+    &--item:not(:last-child) {
+      padding-right: 10px;
+    }
+  }
+}

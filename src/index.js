@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 
 import './index.scss';
 import App from './App';
-import combineReducer from './Redux/allReducer';
+import combineReducer from './reducers/allReducer';
 
 const store = createStore(combineReducer, applyMiddleware(thunk));
 

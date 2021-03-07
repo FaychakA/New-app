@@ -1,0 +1,35 @@
+.footer {
+  display: flex;
+  height: 100%;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: none;
+    font-family: Mont, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    color: #fff;
+    transition: all .4s;
+  }
+
+  &__link:hover {
+    color: #000;
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    font-family: Mont, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: .04em;
+    padding-left: 20px;
+
+  }
+}

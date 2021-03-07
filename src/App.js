@@ -1,13 +1,13 @@
 import React from 'react';
 import {Switch, Route, Redirect} from 'react-router-dom';
-import Header from './Components/Header/Header';
-import Footer from "./Components/Footer/Footer";
-import Characters from './Components/CharactersList/Characters';
-import Locations from "./Components/LocationsList/Locations";
-import Episodes from "./Components/EpisodesList/Episodes";
-import CharacterPage from "./Components/CharacterPage/CharacterPage";
-import LocationPage from "./Components/LocationPage/LocationPage";
-import EpisodePage from "./Components/EpisodePage/EpisodePage";
+import Header from './components/common/header/Header';
+import Footer from "./components/common/footer/Footer";
+import Characters from './components/charactersList/Characters';
+import Locations from "./components/locationsList/Locations";
+import Episodes from "./components/episodesList/Episodes";
+import CharacterPage from "./components/characterPage/CharacterPage";
+import LocationPage from "./components/locationPage/LocationPage";
+import EpisodePage from "./components/episodePage/EpisodePage";
 import './App.scss';
 
 function App() {

@@ -1,0 +1,22 @@
+.card {
+  background-color: #fff;
+  width: 180px;
+
+  &__img {
+    object-fit: contain;
+    width: 174px;
+  }
+
+  &__wrapper {
+    padding: 10px;
+  }
+
+  &__link {
+    text-decoration: none;
+    color: #1e90ff;
+  }
+
+  &__link:hover {
+    color: #d2691e;
+  }
+}
