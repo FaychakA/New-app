@@ -4,12 +4,16 @@ import {
     ERROR_LOCATIONS,
     START_LOAD_NEXT_LOCATIONS_PAGE,
     LOADED_NEXT_LOCATIONS_PAGE,
-    ERROR_NEXT_LOCATIONS_PAGE
+    ERROR_NEXT_LOCATIONS_PAGE,
+    START_LOAD_LOCATIONS_BY_SEARCH_PARAMS,
+    LOADED_LOCATIONS_BY_SEARCH_PARAMS,
+    ERROR_LOCATIONS_BY_SEARCH_PARAMS
 } from '../Helpers/actions';
 
 const initialState = {
     loading: false,
     loaded: false,
+    searched: false,
     info: {},
     locationsList: [],
     error: null,
@@ -29,11 +33,18 @@ export default function locationsReducer(state = initialState, action) {
                 loading: true,
                 loaded: false
             };
+            case START_LOAD_LOCATIONS_BY_SEARCH_PARAMS:
+            return {
+                ...state,
+                loading: true,
+                loaded: false
+            };
         case LOADED_LOCATIONS:
             return {
                 ...state,
                 loading: false,
                 loaded: true,
+                searched: false,
                 info: {...action.payload.info},
                 locationsList: [...action.payload.results]
             };
@@ -45,6 +56,15 @@ export default function locationsReducer(state = initialState, action) {
                 info: {...action.payload.info},
                 locationsList: [...state.locationsList, ...action.payload.results]
             };
+            case LOADED_LOCATIONS_BY_SEARCH_PARAMS:
+            return {
+                ...state,
+                loading: false,
+                loaded: true,
+                searched: true,
+                info: {...action.payload.info},
+                locationsList: [...action.payload.results]
+            };
         case ERROR_LOCATIONS:
             return {
                 ...state,
@@ -52,6 +72,12 @@ export default function locationsReducer(state = initialState, action) {
                 error: action.payload.error
             };
         case ERROR_NEXT_LOCATIONS_PAGE:
+            return {
+                ...state,
+                loading: false,
+                error: action.payload.error
+            };
+            case ERROR_LOCATIONS_BY_SEARCH_PARAMS:
             return {
                 ...state,
                 loading: false,

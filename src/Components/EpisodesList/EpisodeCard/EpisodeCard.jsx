@@ -14,7 +14,7 @@ const EpisodeCard = ({ep}) => {
 
                 Episode: &nbsp;
                 <Link to={`/episode/${ep.id}`} className="card__link">
-                    {ep.name}
+                    {ep.episode}
                 </Link>
             </div>
         </div>

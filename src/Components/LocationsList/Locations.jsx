@@ -1,15 +1,27 @@
 import React, {useEffect} from 'react';
 import {getLocations} from '../../Helpers/GetLocations';
 import {getNextLocationsPage} from '../../Helpers/GetNextLocationsPage';
+import {getLocationsBySearchParams} from '../../Helpers/GetLocationsBySearchParams';
 import {connect} from 'react-redux';
 import LocationCard from './LocationCard/LocationCard';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import LocationsSearchBar from '../LocatiosSearchBar/LocationsSearchBar';
 import './Locations.scss';
 
-const Locations = ({getLocations, getNextLocationsPage, loading, loaded, info, locationsList, error}) => {
+const Locations = ({
+                       getLocations,
+                       getNextLocationsPage,
+                       getLocationsBySearchParams,
+                       loading,
+                       loaded,
+                       info,
+                       searched,
+                       locationsList,
+                       error
+}) => {
 
     useEffect(() => {
-        if (!loaded) {
+        if (!loaded || !searched) {
             getLocations();
         }
     }, []);
@@ -24,6 +36,8 @@ const Locations = ({getLocations, getNextLocationsPage, loading, loaded, info, l
 
     return (
         <div className="locations">
+            <LocationsSearchBar getLocationsBySearchParams={getLocationsBySearchParams}/>
+
             <ul className="locations__list">
                 <InfiniteScroll
                     dataLength={locationsList.length}
@@ -47,6 +61,7 @@ const mapStateToProps = state => {
         loading: state.locations.loading,
         loaded: state.locations.loaded,
         info: state.locations.info,
+        earched: state.locations.serched,
         locationsList: state.locations.locationsList,
         error: state.locations.error
     };
@@ -59,6 +74,9 @@ const mapDispatchToProps = dispatch => {
         },
         getNextLocationsPage: (link) => {
             dispatch(getNextLocationsPage(link));
+        },
+        getLocationsBySearchParams: (params) => {
+            dispatch(getLocationsBySearchParams(params));
         }
     };
 };

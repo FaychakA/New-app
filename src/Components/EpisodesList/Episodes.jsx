@@ -1,15 +1,27 @@
 import React, {useEffect} from 'react';
 import {getEpisodes} from '../../Helpers/GetEpisodes';
 import {getNextEpisodesPage} from '../../Helpers/GetNextEpisodesPage';
+import {getEpisodesBySearchParams} from '../../Helpers/GetEpisodesBySearchParams';
 import {connect} from 'react-redux';
 import EpisodeCard from './EpisodeCard/EpisodeCard';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import EpisodesSearchBar from '../EpisodesSearchBar/EpisodesSearchBar';
 import './Episodes.scss';
 
-const Locations = ({getEpisodes, getNextEpisodesPage, loading, loaded, info, episodesList, error}) => {
+const Locations = ({
+                       getEpisodes,
+                       getNextEpisodesPage,
+                       getEpisodesBySearchParams,
+                       loading,
+                       loaded,
+                       info,
+                       searched,
+                       episodesList,
+                       error
+}) => {
 
     useEffect(() => {
-        if(!loaded) {
+        if(!loaded || !searched) {
             getEpisodes();
         }
     }, []);
@@ -24,6 +36,8 @@ const Locations = ({getEpisodes, getNextEpisodesPage, loading, loaded, info, epi
 
     return (
         <div className="episodes">
+            <EpisodesSearchBar getEpisodesBySearchParams={getEpisodesBySearchParams} />
+
             <ul className="episodes__list">
                 <InfiniteScroll
                     dataLength={episodesList.length}
@@ -47,6 +61,7 @@ const mapStateToProps = state => {
         loading: state.episodes.loading,
         loaded: state.episodes.loaded,
         info: state.episodes.info,
+        searched: state.episodes.serched,
         episodesList: state.episodes.episodesList,
         error: state.episodes.error
     };
@@ -59,6 +74,9 @@ const mapDispatchToProps = dispatch => {
         },
         getNextEpisodesPage: (link) => {
             dispatch(getNextEpisodesPage(link));
+        },
+        getEpisodesBySearchParams: (params) => {
+            dispatch(getEpisodesBySearchParams(params));
         }
     };
 };

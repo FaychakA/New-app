@@ -1,10 +1,14 @@
-import {START_LOAD_CHARACTERS, LOADED_CHARACTERS, ERROR_CHARACTERS} from './actions';
+import {
+    START_LOAD_CHARACTERS_BY_SEARCH_PARAMS,
+    LOADED_CHARACTERS_BY_SEARCH_PARAMS,
+    ERROR_CHARACTERS_BY_SEARCH_PARAMS
+} from './actions';
 
-export const getCharacters = () => {
+export const getCharacterBySearchParams = (params) => {
     return dispatch => {
         dispatch(getStartedLoadData());
 
-        fetch(`https://rickandmortyapi.com/api/character`)
+        fetch(`https://rickandmortyapi.com/api/character/?${params}`)
             .then(response => {
                 if (response.ok) {
                     return response.json();
@@ -21,18 +25,18 @@ export const getCharacters = () => {
 };
 
 const getStartedLoadData = () => ({
-    type: START_LOAD_CHARACTERS
+    type: START_LOAD_CHARACTERS_BY_SEARCH_PARAMS
 });
 
 const getLoadedDataSuccess = (data) => ({
-    type: LOADED_CHARACTERS,
+    type: LOADED_CHARACTERS_BY_SEARCH_PARAMS,
     payload: {
         ...data
     }
 });
 
 const getDataFailure = (error) => ({
-    type: ERROR_CHARACTERS,
+    type: ERROR_CHARACTERS_BY_SEARCH_PARAMS,
     payload: {
         error
     }

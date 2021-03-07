@@ -1,15 +1,27 @@
 import React, {useEffect} from 'react';
 import {getCharacters} from '../../Helpers/GetCharacters';
 import {getNextCharactersPage} from '../../Helpers/GetNextCharactersPage';
+import {getCharacterBySearchParams} from '../../Helpers/GetCharactersBySearchParams';
 import {connect} from 'react-redux';
 import CharacterCard from './CharacterCard/CharacterCard';
 import InfiniteScroll from 'react-infinite-scroll-component';
+import CharactersSearchBar from '../CharactersSerchBar/CharactersSerchBar';
 import './Characters.scss';
 
-const Characters = ({getCharacters, getNextCharactersPage, loading, loaded, charactersList, info, error}) => {
+const Characters = ({
+                        getCharacters,
+                        getNextCharactersPage,
+                        getCharacterBySearchParams,
+                        loading,
+                        loaded,
+                        searched,
+                        charactersList,
+                        info,
+                        error
+                    }) => {
 
     useEffect(() => {
-        if (!loaded) {
+        if (!loaded || !searched) {
             getCharacters();
         }
     }, []);
@@ -23,7 +35,9 @@ const Characters = ({getCharacters, getNextCharactersPage, loading, loaded, char
     }
 
     return (
-        <div  className="characters">
+        <div className="characters">
+            <CharactersSearchBar getCharacterBySearchParams={getCharacterBySearchParams}/>
+
             <ul className="characters__list">
                 <InfiniteScroll
                     dataLength={charactersList.length}
@@ -47,6 +61,7 @@ const mapStateToProps = state => {
         loading: state.characters.loading,
         loaded: state.characters.loaded,
         info: state.characters.info,
+        searched: state.characters.serched,
         charactersList: state.characters.charactersList,
         error: state.characters.error
     };
@@ -59,6 +74,9 @@ const mapDispatchToProps = dispatch => {
         },
         getNextCharactersPage: (link) => {
             dispatch(getNextCharactersPage(link));
+        },
+        getCharacterBySearchParams: (params) => {
+            dispatch(getCharacterBySearchParams(params));
         }
     };
 };
